@@ -5,12 +5,10 @@
     box-sizing: border-box
     margin: 0
     padding: 0
-    // font-family: 'Inter', sans-serif
     font-family: 'Poppins', sans-serif
 body 
-    padding: 30px 60px
     font-family: 'Poppins', sans-serif
-    overflow: hidden
+    // overflow: hidden
     // background: rgb(255,255,255)
     background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(200,200,200,1) 61%, rgba(220,220,220,1) 62%, rgba(255,255,255,1) 100%)
 
@@ -18,27 +16,153 @@ body
     display: flex
     justify-content: end
     align-items: center
+    padding: 30px 60px
 .header__nav_list
     text-decoration: none
     color: #000
-    font-size: 16px
+    font-size: 18px
     font-weight: 400
     line-height: 28.88px
     letter-spacing: 4.48px
     word-wrap: break-word
     margin-right: 70px
 .header__nav_list-circle
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    transform: rotate(90deg)
+    padding: 15px
     width: 70px
     height: 70px
     border: 1px solid #000
     border-radius: 50%
 .header__nav_list-line 
     width: 1.5px
-    height: 50px
+    height: 35px
     background-color: #000
-    transform: rotate(90deg)
 .header__nav_list-line_short 
+    margin-left: 5px
     width: 1.5px
-    height: 25px
+    height: 20px
     background-color: #000
-    transform: rotate(90deg)
+
+
+.main
+    position: relative
+    width: 110%
+    bottom: 310px
+    right: 150px
+    height: 1100px
+    // overflow: hidden
+
+
+.main__slider_counter
+    display: flex
+    flex-direction: column-reverse
+    justify-content: space-between
+    position: relative
+    top: 350px
+    left: 710px
+    height: 400px
+.main__slider-prev
+    color: #000
+    cursor: pointer
+    img
+        width: 32px
+        height: 32px
+.main__slider-next
+    color: #000
+    cursor: pointer
+    img
+        width: 32px
+        height: 32px
+
+.main__slider_container
+    display: flex
+    width: 100%
+    height: 100%
+
+.main__slider_container-wrapper
+
+.main__slide
+    display: flex
+    align-items: center
+.main__slide_rolex
+    width: 950px
+    height: 1100px
+    object-fit: cover
+
+.main__slide_rado
+    width: 950px
+    height: 1100px
+    object-fit: cover
+.main__slide_hublot
+    width: 820px
+    height: 1100px
+    object-fit: cover
+
+@keyframes gradient
+	0%
+		background-position: 0% 50%
+	50%
+		background-position: 100% 50%
+	100%
+		background-position: 0% 50%
+
+.title
+    position: relative
+    display: flex
+    flex-direction: column
+    width: 950px
+    height: 1100px
+    bottom: -295px
+    left: -240px
+    color: #000
+.title__company
+    display: flex
+    justify-content: flex-start
+    font-size: 150px
+    font-family: Inter
+    font-weight: 900
+    line-height: 280px
+    word-wrap: break-word
+.title__modal
+    display: flex
+    justify-content: end
+    font-size: 150px
+    font-family: Inter
+    font-weight: 900
+    line-height: 280px
+    word-wrap: break-word
+
+.rolex
+    background: linear-gradient(-45deg, rgba(127,118,121,1) 5%, rgba(245,175,0,1) 40%, rgba(48,3,6,1) 79%, rgba(0,0,0,1) 89%)
+    background-size: 300%
+    animation: gradient 10s ease-in-out infinite
+    -webkit-background-clip: text
+    background-clip: text
+    -webkit-text-fill-color: transparent
+.rado
+.hublot
+
+.description
+    align-self: flex-end
+    width: 550px
+    height: 250px
+    color: black
+    font-size: 16px
+    font-family: Poppins
+    font-weight: 600
+    line-height: 29.76px
+    letter-spacing: 0.08px
+    word-wrap: break-word
+    gap: 20px
+.description__details
+    cursor: pointer
+
+.description__text
+    font-weight: 400
+.description__mechanism
+    line-height: 32.24px
+.description__size
+    font-weight: 600
