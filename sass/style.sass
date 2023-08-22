@@ -9,14 +9,45 @@
 body 
     font-family: 'Poppins', sans-serif
     // overflow: hidden
-    // background: rgb(255,255,255)
     background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(200,200,200,1) 61%, rgba(220,220,220,1) 62%, rgba(255,255,255,1) 100%)
+
+.animate-fade 
+    opacity: 0
+    transform: translateY(20px) //* Начальное положение элемента */
+    transition: opacity 1s ease-out, transform 1s ease-out //* Плавные переходы */
+.show 
+    opacity: 1
+    transform: translateY(0) //* Конечное положение элемента */
+
+
+@keyframes bounce 
+    0%, 100%
+        transform: translateY(5px)
+    50%
+        transform: translateY(-8px)
 
 .header 
     display: flex
     justify-content: end
     align-items: center
     padding: 30px 60px
+    position: relative
+    z-index: 5
+.header-scroll
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-right: 150px
+    font-size: 20px
+    font-weight: 400
+    line-height: 28.88px
+    letter-spacing: 4.48px
+    word-wrap: break-word
+    img
+        width: 20px
+        height: 20px
+        animation: bounce 2s infinite
+        animation-timing-function: ease-in-out
 .header__nav_list
     text-decoration: none
     color: #000
@@ -26,6 +57,7 @@ body
     letter-spacing: 4.48px
     word-wrap: break-word
     margin-right: 70px
+    cursor: pointer
 .header__nav_list-circle
     display: flex
     align-items: flex-start
@@ -36,6 +68,7 @@ body
     height: 70px
     border: 1px solid #000
     border-radius: 50%
+    cursor: pointer
 .header__nav_list-line 
     width: 1.5px
     height: 35px
@@ -53,8 +86,8 @@ body
     bottom: 310px
     right: 150px
     height: 1100px
-    // overflow: hidden
-
+    // overflow: scroll
+    // overflow-x: hidden
 
 .main__slider_counter
     display: flex
@@ -93,10 +126,16 @@ body
     object-fit: cover
 
 .main__slide_rado
+    position: relative
+    top: 90px
     width: 950px
-    height: 1100px
+    height: 1000px
     object-fit: cover
 .main__slide_hublot
+    position: relative
+    left: 40px
+    top: 60px
+    width: 800px
     width: 820px
     height: 1100px
     object-fit: cover
@@ -118,22 +157,18 @@ body
     bottom: -295px
     left: -240px
     color: #000
+    font-size: 150px
+    font-family: Inter
+    font-weight: 900
+    line-height: 280px
+    word-wrap: break-word
 .title__company
     display: flex
     justify-content: flex-start
-    font-size: 150px
-    font-family: Inter
-    font-weight: 900
-    line-height: 280px
-    word-wrap: break-word
 .title__modal
     display: flex
     justify-content: end
-    font-size: 150px
-    font-family: Inter
-    font-weight: 900
-    line-height: 280px
-    word-wrap: break-word
+
 
 .rolex
     background: linear-gradient(-45deg, rgba(127,118,121,1) 5%, rgba(245,175,0,1) 40%, rgba(48,3,6,1) 79%, rgba(0,0,0,1) 89%)
@@ -142,27 +177,68 @@ body
     -webkit-background-clip: text
     background-clip: text
     -webkit-text-fill-color: transparent
-.rado
-.hublot
+.rado-title
+.rado-company
+    background: linear-gradient(-45deg, rgba(57,58,46,1) 9%, rgba(180,129,93,1) 18%, rgba(217,162,121,1) 63%, rgba(84,83,74,1) 77%)
+    background-size: 300%
+    animation: gradient 10s ease-in-out infinite
+    -webkit-background-clip: text
+    background-clip: text
+    -webkit-text-fill-color: transparent
+.rado-modal
+    line-height: 250px
+
+.hublot-title
+    width: 880px
+    bottom: -295px
+    left: -60px
+.hublot-company 
+    background: linear-gradient(-45deg, rgba(79,79,79,1) 38%, rgba(224,80,144,1) 43%, rgba(35,36,36,1) 48%, rgba(203,149,117,1) 85%)
+    background-size: 300%
+    animation: gradient 10s ease-in-out infinite
+    -webkit-background-clip: text
+    background-clip: text
+    -webkit-text-fill-color: transparent
+.hublot-modal 
+        line-height: 250px
 
 .description
+    display: flex
+    flex-direction: column
+    margin-right: 80px
     align-self: flex-end
     width: 550px
     height: 250px
     color: black
-    font-size: 16px
+    font-size: 18px
     font-family: Poppins
     font-weight: 600
     line-height: 29.76px
     letter-spacing: 0.08px
     word-wrap: break-word
     gap: 20px
+    a
+        text-decoration: none
+        color: #000
 .description__details
+    display: flex
+    align-items: center
+    width: 200px
     cursor: pointer
+    img
+        margin-left: 15px
+
 
 .description__text
     font-weight: 400
-.description__mechanism
-    line-height: 32.24px
+    letter-spacing: 1px
+.description__info
+    display: flex
+    flex-direction: column
+    align-items: end
+.description__meсhanism
+    line-height: 201.5%
+    font-weight: 400
+    letter-spacing: 1px
 .description__size
     font-weight: 600
