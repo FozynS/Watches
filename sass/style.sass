@@ -8,7 +8,7 @@
     font-family: 'Poppins', sans-serif
 body 
     font-family: 'Poppins', sans-serif
-    // overflow: hidden
+    overflow: hidden
     background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(200,200,200,1) 61%, rgba(220,220,220,1) 62%, rgba(255,255,255,1) 100%)
 
 .animate-fade 
@@ -16,8 +16,22 @@ body
     transform: translateY(20px) //* Начальное положение элемента */
     transition: opacity 1s ease-out, transform 1s ease-out //* Плавные переходы */
 .show 
-    opacity: 1
-    transform: translateY(0) //* Конечное положение элемента */
+    transform: translate(0%)
+    transition: transform 1.5s ease-in-out
+
+.hide-left
+    transform: translate(-100%)
+    transition: transform 1.5s ease-in-out
+    opacity: 0.8
+.hide-right
+    transform: translate(100%)
+    transition: transform 1.5s ease-in-out
+    opacity: 0.8
+.hide-down
+    transform: translateY(120%)
+    transition: transform 1.5s ease-in-out
+    opacity: 0.5
+.hide-up
 
 
 @keyframes bounce 
@@ -86,8 +100,8 @@ body
     bottom: 310px
     right: 150px
     height: 1100px
-    // overflow: scroll
-    // overflow-x: hidden
+    // overflow: hidden
+    overflow-y: scroll
 
 .main__slider_counter
     display: flex
@@ -114,17 +128,15 @@ body
     display: flex
     width: 100%
     height: 100%
-
 .main__slider_container-wrapper
-
 .main__slide
     display: flex
     align-items: center
+.main__slide-img
 .main__slide_rolex
     width: 950px
     height: 1100px
     object-fit: cover
-
 .main__slide_rado
     position: relative
     top: 90px
@@ -140,21 +152,13 @@ body
     height: 1100px
     object-fit: cover
 
-@keyframes gradient
-	0%
-		background-position: 0% 50%
-	50%
-		background-position: 100% 50%
-	100%
-		background-position: 0% 50%
-
 .title
     position: relative
     display: flex
     flex-direction: column
     width: 950px
-    height: 1100px
-    bottom: -295px
+    // height: 1100px
+    bottom: -95px
     left: -240px
     color: #000
     font-size: 150px
@@ -165,11 +169,22 @@ body
 .title__company
     display: flex
     justify-content: flex-start
+    // transform: translate(0%)
+    // transition: transform 1.5s ease-in-out
 .title__modal
     display: flex
     justify-content: end
+    // transform: translate(0%)
+    // transition: transform 1.5s ease-in-out
 
 
+@keyframes gradient
+	0%
+		background-position: 0% 50%
+	50%
+		background-position: 100% 50%
+	100%
+		background-position: 0% 50%
 .rolex
     background: linear-gradient(-45deg, rgba(127,118,121,1) 5%, rgba(245,175,0,1) 40%, rgba(48,3,6,1) 79%, rgba(0,0,0,1) 89%)
     background-size: 300%
@@ -190,7 +205,7 @@ body
 
 .hublot-title
     width: 880px
-    bottom: -295px
+    bottom: -95px
     left: -60px
 .hublot-company 
     background: linear-gradient(-45deg, rgba(79,79,79,1) 38%, rgba(224,80,144,1) 43%, rgba(35,36,36,1) 48%, rgba(203,149,117,1) 85%)
@@ -217,6 +232,8 @@ body
     letter-spacing: 0.08px
     word-wrap: break-word
     gap: 20px
+    transform: translate(0%)
+    transition: transform 1.5s ease-in-out
     a
         text-decoration: none
         color: #000
@@ -227,8 +244,6 @@ body
     cursor: pointer
     img
         margin-left: 15px
-
-
 .description__text
     font-weight: 400
     letter-spacing: 1px
