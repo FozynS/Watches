@@ -11,28 +11,45 @@ body
     overflow: hidden
     background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(200,200,200,1) 61%, rgba(220,220,220,1) 62%, rgba(255,255,255,1) 100%)
 
-.animate-fade 
-    opacity: 0
-    transform: translateY(20px) //* Начальное положение элемента */
-    transition: opacity 1s ease-out, transform 1s ease-out //* Плавные переходы */
 .show 
+    opacity: 1
     transform: translate(0%)
-    transition: transform 1.5s ease-in-out
-
+    transition: all 1.5s ease-in-out
+.hide
+    opacity: 0
+    transition: opacity 2s ease-in-out
 .hide-left
-    transform: translate(-100%)
-    transition: transform 1.5s ease-in-out
-    opacity: 0.8
+    opacity: 0
+    transform: translateX(-130%)
+    transition: all 1.5s ease-in-out
 .hide-right
-    transform: translate(100%)
-    transition: transform 1.5s ease-in-out
-    opacity: 0.8
+    opacity: 0
+    transform: translateX(120%)
+    transition: all 1.5s ease-in-out
 .hide-down
-    transform: translateY(120%)
-    transition: transform 1.5s ease-in-out
-    opacity: 0.5
+    opacity: 0
+    transform: translateY(130%)
+    transition: all 1.5s ease-in-out
 .hide-up
-
+    opacity: 0
+    transform: translateY(-90%)
+    transition: all 1.5s ease-in-out
+.show-up 
+    opacity: 1
+    transform: translateY(0%)
+    transition: all 1.5s ease-in-out
+.show-left 
+    opacity: 1
+    transform: translateX(0%)
+    transition: all 1.5s ease-in-out
+.show-right 
+    opacity: 1
+    transform: translateX(0%)
+    transition: all 1.5s ease-in-out
+.show-down 
+    opacity: 1
+    transform: translateY(0%)
+    transition: all 1.5s ease-in-out
 
 @keyframes bounce 
     0%, 100%
@@ -47,9 +64,9 @@ body
     padding: 30px 60px
     position: relative
     z-index: 5
-.header-scroll
+.header-clickMe
     display: flex
-    flex-direction: column
+    flex-direction: column-reverse
     align-items: center
     margin-right: 150px
     font-size: 20px
@@ -57,6 +74,7 @@ body
     line-height: 28.88px
     letter-spacing: 4.48px
     word-wrap: break-word
+    cursor: pointer
     img
         width: 20px
         height: 20px
@@ -93,24 +111,22 @@ body
     height: 20px
     background-color: #000
 
-
 .main
     position: relative
     width: 110%
     bottom: 310px
     right: 150px
     height: 1100px
-    // overflow: hidden
-    overflow-y: scroll
 
 .main__slider_counter
     display: flex
     flex-direction: column-reverse
     justify-content: space-between
     position: relative
-    top: 350px
-    left: 710px
+    left: 210px
     height: 400px
+    overflow: hidden
+    overflow-y: scroll
 .main__slider-prev
     color: #000
     cursor: pointer
@@ -128,7 +144,6 @@ body
     display: flex
     width: 100%
     height: 100%
-.main__slider_container-wrapper
 .main__slide
     display: flex
     align-items: center
@@ -143,6 +158,7 @@ body
     width: 950px
     height: 1000px
     object-fit: cover
+.slide-rado
 .main__slide_hublot
     position: relative
     left: 40px
@@ -152,16 +168,18 @@ body
     height: 1100px
     object-fit: cover
 
+.slide-hublot
+    height: 1290px
+
 .title
     position: relative
     display: flex
     flex-direction: column
     width: 950px
-    // height: 1100px
     bottom: -95px
     left: -240px
     color: #000
-    font-size: 150px
+    font-size: 130px
     font-family: Inter
     font-weight: 900
     line-height: 280px
@@ -169,14 +187,10 @@ body
 .title__company
     display: flex
     justify-content: flex-start
-    // transform: translate(0%)
-    // transition: transform 1.5s ease-in-out
+
 .title__modal
     display: flex
     justify-content: end
-    // transform: translate(0%)
-    // transition: transform 1.5s ease-in-out
-
 
 @keyframes gradient
 	0%
@@ -193,6 +207,7 @@ body
     background-clip: text
     -webkit-text-fill-color: transparent
 .rado-title
+    bottom: -130px
 .rado-company
     background: linear-gradient(-45deg, rgba(57,58,46,1) 9%, rgba(180,129,93,1) 18%, rgba(217,162,121,1) 63%, rgba(84,83,74,1) 77%)
     background-size: 300%
@@ -205,7 +220,7 @@ body
 
 .hublot-title
     width: 880px
-    bottom: -95px
+    bottom: -90px
     left: -60px
 .hublot-company 
     background: linear-gradient(-45deg, rgba(79,79,79,1) 38%, rgba(224,80,144,1) 43%, rgba(35,36,36,1) 48%, rgba(203,149,117,1) 85%)
@@ -215,7 +230,7 @@ body
     background-clip: text
     -webkit-text-fill-color: transparent
 .hublot-modal 
-        line-height: 250px
+    line-height: 250px
 
 .description
     display: flex
@@ -225,14 +240,13 @@ body
     width: 550px
     height: 250px
     color: black
-    font-size: 18px
+    font-size: 16px
     font-family: Poppins
     font-weight: 600
     line-height: 29.76px
     letter-spacing: 0.08px
     word-wrap: break-word
     gap: 20px
-    transform: translate(0%)
     transition: transform 1.5s ease-in-out
     a
         text-decoration: none
