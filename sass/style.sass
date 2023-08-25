@@ -17,7 +17,7 @@ body
     transition: all 1.5s ease-in-out
 .hide
     opacity: 0
-    transition: opacity 2s ease-in-out
+    transition: opacity 1s ease-in-out
 .hide-left
     opacity: 0
     transform: translateX(-130%)
@@ -61,7 +61,7 @@ body
     display: flex
     justify-content: end
     align-items: center
-    padding: 30px 60px
+    padding: 30px 20px
     position: relative
     z-index: 5
 .header-clickMe
@@ -105,12 +105,63 @@ body
     width: 1.5px
     height: 35px
     background-color: #000
+    transition: all 1s ease-in-out
 .header__nav_list-line_short 
     margin-left: 5px
     width: 1.5px
     height: 20px
     background-color: #000
-
+    transition: all 1s ease-in-out
+.navbar 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 20px
+.menu 
+    list-style: none
+    display: flex
+    flex-direction: column
+    position: absolute
+    top: 100%
+    right: 0
+    background-color: #333;
+    padding: 10px 0
+    z-index: 1
+    transform: translateX(100%)
+.menu_item
+    a
+        text-decoration: none
+        color: #000
+.show-menu 
+    height: 800px
+    width: 25.2%
+    background: #cccc
+    font-size: 30px
+    line-height: 70px
+    letter-spacing: 4px
+    align-items: center
+    border-radius: 30px
+    transform: translateX(0%)
+    transition: transform 1s ease-in-out
+.hide-menu
+    height: 800px
+    width: 25.2%
+    background: #cccc
+    font-size: 30px
+    line-height: 70px
+    letter-spacing: 4px
+    align-items: center
+    border-radius: 30px
+    transform: translateX(100%)
+    transition: transform 1s ease-in-out
+.line-cross
+    transform: rotate(45deg)
+    transition: all 1s ease-in-out
+.short_line-cross
+    transform: rotate(-45deg)
+    height: 35px
+    margin-left: 0
+    transition: all 1s ease-in-out
 .main
     position: relative
     width: 110%

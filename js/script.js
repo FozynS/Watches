@@ -6,35 +6,42 @@ document.addEventListener("DOMContentLoaded", function () {
             titles = document.querySelectorAll(".title"),
             descriptions = document.querySelectorAll(".description");
 
-    header.classList.add("hide");
-    main.classList.add("hide");
-    mainSlideImages.forEach(image => image.classList.add("hide"));
-    titles.forEach(title => title.classList.add("hide"));
-    descriptions.forEach(description => description.classList.add("hide"));
+    // Спрятать элементы
+    header.style.opacity = "0";
+    main.style.opacity = "0";
+    mainSlideImages.forEach(image => image.style.opacity = "0");
+    titles.forEach(title => title.style.opacity = "0");
+    descriptions.forEach(description => description.style.opacity = "0");
 
+    // Функция для плавного появления элемента
     function fadeIn(element, delay) {
         setTimeout(function () {
             element.style.transition = "opacity 1s ease-out";
-            element.classList.remove("hide");
-            element.classList.add("show");
+            element.style.opacity = "1";
         }, delay);
     }
 
+    // Плавное появление изображений слайдов поочередно
     mainSlideImages.forEach((image, index) => {
-        fadeIn(image, 300 * index); 
+        fadeIn(image, 300 * index); // Задержка увеличена для последовательного появления
     });
 
+    // Плавное появление заголовков после появления изображений
     titles.forEach((title, index) => {
-        fadeIn(title, 300 * mainSlideImages.length + 300 * index); 
+        fadeIn(title, 300 * mainSlideImages.length + 300 * index); // Задержка после изображений
     });
 
+    // Плавное появление описаний после появления заголовков
     descriptions.forEach((description, index) => {
-        fadeIn(description, 300 * (mainSlideImages.length + titles.length) + 300 * index); 
+        fadeIn(description, 300 * (mainSlideImages.length + titles.length) + 300 * index); // Задержка после заголовков
     });
 
-    fadeIn(header, 1000); 
+    // Плавное появление header
+    fadeIn(header, 1000); // Задержка после описаний
 
-    fadeIn(main, 1200); 
+    // Плавное появление main
+    fadeIn(main, 1200); // Задержка после header
+     // Обработка события прокрутки
 });
 
 //*!Scroll Animation */
@@ -103,5 +110,25 @@ function animateShowBlocks() {
     slideTitleCompany[currentSlideIndex].classList.remove('hide-left');
     slideTitleModal[currentSlideIndex].classList.remove('hide-right');
     slideDescription[currentSlideIndex].classList.remove('hide-down');
-
 }
+
+//*!Menu Burger */
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerButton = document.getElementById('burgerButton'),
+            menu = document.getElementById('menu'),
+            lineCross = document.querySelector('.header__nav_list-line'),
+            shortLineCross = document.querySelector('.header__nav_list-line_short');
+    
+    burgerButton.addEventListener('click', function () {
+        lineCross.classList.toggle('line-cross');
+        shortLineCross.classList.toggle('short_line-cross');
+    
+        if(menu.classList.contains('show-menu')){
+            menu.classList.remove('show-menu');
+            menu.classList.add('hide-menu');
+        } else {
+            menu.classList.add('show-menu');
+            menu.classList.remove('hide-menu');
+        }
+    });
+});
