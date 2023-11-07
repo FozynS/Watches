@@ -3,3 +3,5 @@ But you learn from mistakes.
 And I will definitely come back to it after some time to make it perfect)
 
 Link: https://watchessite.netlify.app/
+
+My linkdin profile: https://www.linkedin.com/in/danylo-shvidkiy-ab9761257/
